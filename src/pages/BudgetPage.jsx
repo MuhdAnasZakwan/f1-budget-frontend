@@ -19,6 +19,10 @@ const BudgetPage = () => {
   useEffect(() => {
     console.log("Fetching data...");
     Promise.all([getTeams(), getSponsors("all", token), getExpenses("all", token)]).then(([teamData, sponsorData, expenseData]) => {
+      console.log("Teams:", teamData);
+      console.log("Sponsors:", sponsorData);
+      console.log("Expenses:", expenseData);
+      
       setTeams(teamData);
       setSponsors(sponsorData);
       setExpenses(expenseData);
