@@ -22,11 +22,11 @@ const BudgetPage = () => {
       console.log("Teams:", teamData);
       console.log("Sponsors:", sponsorData);
       console.log("Expenses:", expenseData);
-      
+
       setTeams(teamData);
       setSponsors(sponsorData);
       setExpenses(expenseData);
-    });
+    }).catch((error) => {console.error(error);});
   }, []);
 
   useEffect(() => {
