@@ -17,7 +17,7 @@ const BudgetPage = () => {
   const [teamData, setTeamData] = useState([]);
   
   useEffect(() => {
-    console.log("Fetching data...");
+    console.log("Not fetching data...");
     Promise.all([getTeams(), getSponsors("all", token), getExpenses("all", token)]).then(([teamData, sponsorData, expenseData]) => {
       console.log("Teams:", teamData);
       console.log("Sponsors:", sponsorData);
@@ -26,7 +26,7 @@ const BudgetPage = () => {
       setTeams(teamData);
       setSponsors(sponsorData);
       setExpenses(expenseData);
-    }).catch((error) => {console.error(error);});
+    }).catch((error) => {console.log(error);});
   }, []);
 
   useEffect(() => {
