@@ -30,7 +30,7 @@ const BudgetPage = () => {
   }, []);
 
   useEffect(() => {
-    if (teams.length > 0 && sponsors.length > 0 && expenses.length > 0) {
+    if (teams.length > 0) {
       const combined = teams.map((team) => {
         const teamSponsors = sponsors.filter((sponsor) => sponsor.team._id === team._id);
         const teamExpenses = expenses.filter((expense) => expense.team._id === team._id);
